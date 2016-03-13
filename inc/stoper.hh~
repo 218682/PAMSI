@@ -14,7 +14,7 @@ public:
   void start();
   void stop();
   float getElapsedTime();
-  void dumpToFile (const std::string);
+  bool dumpToFile (const std::string);
 };
       
 
