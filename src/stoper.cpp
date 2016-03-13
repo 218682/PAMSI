@@ -8,12 +8,18 @@ void stoper::start()
 void stoper::stop()
 {
   time_t czasStop=clock();
-  this->cstart=czasStop/(CLOCKS_PER_SEC*1.0);
+  this->cstop=czasStop/(CLOCKS_PER_SEC*1.0);
 }
 float stoper::getElapsedTime()
 {
+  stop();
   this->ElapsedTime=cstop-cstart;
   start();
+  return ElapsedTime;
+}
+float stoper::getTime()
+{
+  this->ElapsedTime=cstop-cstart;
   return ElapsedTime;
 }
 bool stoper::dumpToFile (const std::string Nazwa)
@@ -29,7 +35,7 @@ bool stoper::dumpToFile (const std::string Nazwa)
   else
     if( plik.good() == true )
       {
-	plik<<getElapsedTime()<<std::endl;
+	plik<<getTime()<<std::endl;
 	return true;
       } else std::cout << "Dostep do pliku zostal zabroniony!" << std::endl;
   return false;
