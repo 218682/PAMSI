@@ -1,0 +1,10 @@
+#ifndef atp_HH
+#define atp_HH
+class atp{
+protected:
+  int rozmiar;
+public:
+  virtual void wyswietl()=0;
+  virtual void push(int dana)=0;
+};
+#endif

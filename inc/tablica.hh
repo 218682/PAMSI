@@ -1,11 +1,10 @@
 #ifndef TABLICA_HH
 #define TABLICA_HH
-#include "kolejka.hh"
+#include "atp.hh"
 #include <iostream>
-class tablica: public kolejka
+class tablica: public atp2
 {
 private:
-  int ile_elem=0;
   int *tab=new int[rozmiar];
 public:
   tablica() {rozmiar=10;}
@@ -15,6 +14,5 @@ public:
   void wyswietl_roz(){std::cout<<rozmiar<<std::endl;}
   void push(int);
   void zwieksz(int);
-
 };
 #endif

@@ -1,10 +1,10 @@
-#ifndef KOLEJKA_HH
-#define KOLEJKA_HH
-class kolejka: public tablica{
+#ifndef STOS_HH
+#define STOS_HH
+class stos: public tablica{
 private:
   tablica tab;
 public:
-  kolejka();
+  stos();
   void push(int);
   void remove(int);
   void add(int, int);
