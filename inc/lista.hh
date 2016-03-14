@@ -1,10 +1,11 @@
-#ifndef KOLEJKA_HH
-#define KOLEJKA_HH
-class kolejka: public tablica{
+#ifndef LISTA_HH
+#define LISTA_HH
+class lista: public atp2{
 private:
-  tablica tab;
+  int dana;
+  lista *NEXT;
 public:
-  kolejka();
+  lista();
   void push(int);
   void remove(int);
   void add(int, int);

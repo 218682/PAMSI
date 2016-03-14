@@ -11,7 +11,7 @@ void tablica::zwieksz(int dana)
   {
     //std::cout<<"zwiekszam "<<i<<std::endl;
     int p=rozmiar;     // zmienna pomocnicza, zapamietuje poprzedni rozmiar tab.
-    this->rozmiar=rozmiar*2;       // nowy rozmiar tablicy
+    this->rozmiar=rozmiar+1;       // nowy rozmiar tablicy
     int *tmp= new int[rozmiar];   //tworzy tablice tymczasowa
     for(int j=0; j<p; j++)
       tmp[j]=tab[j];   //kopiuje zawartosc tablicy

@@ -22,7 +22,7 @@ float stoper::getTime()
   this->ElapsedTime=cstop-cstart;
   return ElapsedTime;
 }
-bool stoper::dumpToFile (const std::string Nazwa)
+bool stoper::dumpToFile (std::string Nazwa)
 {
   std::fstream plik;
   plik.open(Nazwa, std::ios::app);
