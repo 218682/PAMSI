@@ -1,0 +1,35 @@
+#include<iostream>
+#include<cstring>
+#include "stos.hh"
+#include "stoper.hh"
+#include "kolejka.hh"
+int main (void)
+{
+  //  int N=10;
+  //int ile_el=10;
+
+  //stoper s;
+  //std::string dane="pomiary2";
+   kolejka kolej;
+   kolej.add(2,0);
+   kolej.add(4,0);
+   kolej.get(1);
+   kolej.add(3,0);
+   kolej.get(0);
+   kolej.remove(0);
+  /* for(int j=0; j<10; j++)
+    {
+      for(ile_el=10; ile_el<1000001; ile_el=ile_el*10)
+	{
+	  tablica t;
+	  s.start();
+	  for(int i=0;i<ile_el; i++)
+	    t.push(i);
+	  s.stop();
+	  //std::cout<<s.getTime()<<std::endl;
+	  //  s.getElapsedTime();
+	   s.dumpToFile(dane);
+	}
+	}*/
+  return 0;
+}
