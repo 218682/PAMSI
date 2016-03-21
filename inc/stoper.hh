@@ -5,16 +5,16 @@
 #include <cstring>
 #include <iostream>
 #include <fstream>
+#include <chrono>
 class stoper{
 private:
-  float cstart;
-  float cstop;
-  float ElapsedTime;
+  std::chrono::duration<double> ElapsedTime;
+  std::chrono::time_point<std::chrono::high_resolution_clock> cstart, cstop;
 public:
   void start();
   void stop();
-  float getElapsedTime();
-  float getTime();
+  std::chrono::duration<double> getElapsedTime();
+  std::chrono::duration<double> getTime();
   bool dumpToFile (std::string);
 };
       
