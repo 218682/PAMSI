@@ -1,7 +1,0 @@
-<map id="tablica" name="tablica">
-<area shape="rect" id="node4" href="$classkolejka.html" title="kolejka" alt="" coords="5,229,68,256"/>
-<area shape="rect" id="node5" href="$classlista.html" title="lista" alt="" coords="92,229,139,256"/>
-<area shape="rect" id="node6" href="$classstos.html" title="stos" alt="" coords="163,229,209,256"/>
-<area shape="rect" id="node2" href="$classatp2.html" title="atp2" alt="" coords="92,80,139,107"/>
-<area shape="rect" id="node3" href="$classatp.html" title="atp" alt="" coords="95,5,135,32"/>
-</map>
