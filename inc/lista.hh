@@ -1,15 +1,14 @@
 #ifndef LISTA_HH
 #define LISTA_HH
-class lista: public atp2{
-private:
-  int dana;
-  lista *NEXT;
+#include "tablica.hh"
+class lista: public tablica{
 public:
   lista();
-  void push(int);
   void remove(int);
+  void remove();
   void add(int, int);
-  void get (int);
+  void add(int);
+  int get (int);
 };
 
 #endif

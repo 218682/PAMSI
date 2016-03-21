@@ -1,14 +1,13 @@
 #ifndef STOS_HH
 #define STOS_HH
+#include "tablica.hh"
 class stos: public tablica{
-private:
-  tablica tab;
 public:
   stos();
-  void push(int);
-  void remove(int);
-  void add(int, int);
-  void get (int);
+  void remove();
+  void add(int);
+  int get (int);
+  int get ();
 };
 
 #endif
