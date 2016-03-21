@@ -1,0 +1,5 @@
+<map id="kolejka" name="kolejka">
+<area shape="rect" id="node2" href="$classtablica.html" title="tablica" alt="" coords="7,155,67,181"/>
+<area shape="rect" id="node3" href="$classatp2.html" title="atp2" alt="" coords="13,80,60,107"/>
+<area shape="rect" id="node4" href="$classatp.html" title="atp" alt="" coords="17,5,57,32"/>
+</map>
