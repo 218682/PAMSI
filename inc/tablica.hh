@@ -1,18 +1,26 @@
+/*!
+\file
+\brief plik zawiera klase tablica
+*/
 #ifndef TABLICA_HH
 #define TABLICA_HH
-#include "atp.hh"
-#include <iostream>
-class tablica: public atp2
-{
+#include "atp2.hh"
+class tablica: public atp2{
+/*!
+\brief Klasa tablica
+
+Klasa ma w swoim skladzie metody sluzace do zarzadzania tablica dynamiczna uzywane przez inne typy danych*/
 private:
   int *tab=new int[rozmiar];
-public:
+protected:
   tablica() {rozmiar=10;}
   tablica(int n) {rozmiar=n;}
   //void podaj_roz(int M){ this->rozmiar=M;}
-  void wyswietl() {for(int j=0; j<ile_elem; j++) std::cout<<tab[j]<<std::endl;}
-  void wyswietl_roz(){std::cout<<rozmiar<<std::endl;}
+  int wyswietl(int n) {return tab[n];}
   void push(int);
   void zwieksz(int);
+  void przypisz(int, int);
+  void zmniejsz();
+  void zdejmij(int);
 };
 #endif

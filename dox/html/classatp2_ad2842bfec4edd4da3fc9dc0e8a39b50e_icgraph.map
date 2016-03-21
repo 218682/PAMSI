@@ -1,0 +1,11 @@
+<map id="atp2::isEmpty" name="atp2::isEmpty">
+<area shape="rect" id="node2" href="$classkolejka.html#a38392eb78d5c659ed90aff8a8d8b078d" title="kolejka::remove" alt="" coords="156,5,271,32"/>
+<area shape="rect" id="node3" href="$classkolejka.html#aaaccee425d5589570c01d67fa5a0b3e7" title="dodaje dana na koniec kolejki " alt="" coords="169,56,258,83"/>
+<area shape="rect" id="node4" href="$classkolejka.html#a0c4bda6901284547852147a9a4f2d2f5" title="zwraca wartosc, mozliwe jest tylko sprawdzenie ostatniej i pierwszej danej w kolejce, by sprawdzic ostatnia, jako argument podaj ind() lub skorzystaj z metod first() i last() " alt="" coords="167,107,260,133"/>
+<area shape="rect" id="node5" href="$classkolejka.html#ac901b09064b29221205d37bb5d822c93" title="zwraca wartosc pierwszej danej " alt="" coords="167,157,259,184"/>
+<area shape="rect" id="node6" href="$classlista.html#a567ac3ce85a3a7d7b10a3b0aafed56dd" title="lista::remove" alt="" coords="165,208,262,235"/>
+<area shape="rect" id="node7" href="$classlista.html#aca7a3313138e7033678c32b625fd5473" title="dodaje dana na koniec listy " alt="" coords="177,259,249,285"/>
+<area shape="rect" id="node9" href="$classstos.html#a8af2cbfa1b680a7f045d3390a46a1748" title="konstruktor bezparametryczny " alt="" coords="164,309,263,336"/>
+<area shape="rect" id="node10" href="$classstos.html#a5d1b9f3ae3c00298385b555113a7467a" title="metoda add(int)&#45; przyjmuje wartosc int, bedaca nowa liczba do dodania na szczyt stosu ..." alt="" coords="177,360,250,387"/>
+<area shape="rect" id="node8" href="$main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="319,259,369,285"/>
+</map>

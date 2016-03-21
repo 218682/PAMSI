@@ -1,0 +1,8 @@
+<map id="Graficzna hierarchia klas" name="Graficzna hierarchia klas">
+<area shape="rect" id="node1" href="$classatp.html" title="atp" alt="" coords="5,56,45,83"/>
+<area shape="rect" id="node2" href="$classatp2.html" title="atp2" alt="" coords="93,56,140,83"/>
+<area shape="rect" id="node3" href="$classtablica.html" title="tablica" alt="" coords="188,56,248,83"/>
+<area shape="rect" id="node4" href="$classkolejka.html" title="kolejka" alt="" coords="296,5,359,32"/>
+<area shape="rect" id="node5" href="$classlista.html" title="lista" alt="" coords="304,56,351,83"/>
+<area shape="rect" id="node6" href="$classstos.html" title="stos" alt="" coords="304,107,351,133"/>
+</map>
