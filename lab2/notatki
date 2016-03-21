@@ -1,0 +1,26 @@
+klasy abstrakcyjne/ interfejsy
+
+klasa stoper
+-start
+-stop
+-getElapsedTime
+-dumpToFile
+
+"Biegacz"- klasa iRunnable
+/-widzialny
+/-informacja czy dobiegł
+-bool prepare(int size)
+-bool run()
+
+"Sędzia"
+/startuje zawodnika
+/mierzy czas
+
+
+IRunnable-> ->kolejka->queue
+
+
+zadanie domowe:
+przeprojektowania kodu 
+ponowne wykonanie pomiarów, przynajmniej 10 korotnie i uśrenić 
+przeczytać o abstrakcyjnych typach danych szczególnie listy, kolejki i stosy

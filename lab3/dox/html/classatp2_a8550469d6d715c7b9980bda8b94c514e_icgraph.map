@@ -1,0 +1,10 @@
+<map id="atp2::ind" name="atp2::ind">
+<area shape="rect" id="node2" href="$classkolejka.html#aaaccee425d5589570c01d67fa5a0b3e7" title="dodaje dana na koniec kolejki " alt="" coords="135,5,225,32"/>
+<area shape="rect" id="node3" href="$classkolejka.html#ac901b09064b29221205d37bb5d822c93" title="zwraca wartosc pierwszej danej " alt="" coords="134,56,226,83"/>
+<area shape="rect" id="node4" href="$classlista.html#a567ac3ce85a3a7d7b10a3b0aafed56dd" title="lista::remove" alt="" coords="291,183,389,209"/>
+<area shape="rect" id="node5" href="$classlista.html#aca7a3313138e7033678c32b625fd5473" title="dodaje dana na koniec listy " alt="" coords="144,107,216,133"/>
+<area shape="rect" id="node7" href="$classstos.html#a5d1b9f3ae3c00298385b555113a7467a" title="metoda add(int)&#45; przyjmuje wartosc int, bedaca nowa liczba do dodania na szczyt stosu ..." alt="" coords="143,208,217,235"/>
+<area shape="rect" id="node8" href="$classtablica.html#aaab8198682dc839a3e99d2fe9a7ae83c" title="tablica::zdejmij" alt="" coords="125,259,235,285"/>
+<area shape="rect" id="node6" href="$main_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="315,107,365,133"/>
+<area shape="rect" id="node9" href="$classkolejka.html#a38392eb78d5c659ed90aff8a8d8b078d" title="kolejka::remove" alt="" coords="283,259,397,285"/>
+</map>

@@ -1,0 +1,42 @@
+#include "stoper.hh"
+using namespace std;
+void stoper::start()
+{
+  time_t czasStart=clock();
+  this->cstart=czasStart/(CLOCKS_PER_SEC*1.0);
+}
+void stoper::stop()
+{
+  time_t czasStop=clock();
+  this->cstop=czasStop/(CLOCKS_PER_SEC*1.0);
+}
+float stoper::getElapsedTime()
+{
+  stop();
+  this->ElapsedTime=cstop-cstart;
+  start();
+  return ElapsedTime;
+}
+float stoper::getTime()
+{
+  this->ElapsedTime=cstop-cstart;
+  return ElapsedTime;
+}
+bool stoper::dumpToFile (std::string Nazwa)
+{
+  std::fstream plik;
+  plik.open(Nazwa, std::ios::app);
+  //std::ofstream plik(Nazwa);
+  if (!plik.is_open()) {
+    std::cerr << 
+      ":(  Nie powiodlo sie otwarcie pliku: " << Nazwa << std::endl;
+    return false;
+  }
+  else
+    if( plik.good() == true )
+      {
+	plik<<getTime()<<std::endl;
+	return true;
+      } else std::cout << "Dostep do pliku zostal zabroniony!" << std::endl;
+  return false;
+}
