@@ -1,0 +1,10 @@
+<map id="atp2::size" name="atp2::size">
+<area shape="rect" id="node2" href="$classstos.html#a8af2cbfa1b680a7f045d3390a46a1748" title="konstruktor bezparametryczny " alt="" coords="137,31,236,57"/>
+<area shape="rect" id="node3" href="$classtablica.html#aa558871f57e678103d92b4038c58623f" title="tablica::push" alt="" coords="139,81,235,108"/>
+<area shape="rect" id="node7" href="$classtablica.html#aaab8198682dc839a3e99d2fe9a7ae83c" title="tablica::zdejmij" alt="" coords="132,157,241,184"/>
+<area shape="rect" id="node4" href="$classkolejka.html#a2b9a60c6e42764a419e6e7347c2f4227" title="usuwa pierwsza dana w kolejce " alt="" coords="301,5,393,32"/>
+<area shape="rect" id="node5" href="$classlista.html#aa3b586da2830b20ca5818509a34ed6a6" title="dodaje dana na miejscu o podanym indeksie, jezeli nie moze byc tam wstawiona zglosi wyjatek..." alt="" coords="309,56,384,83"/>
+<area shape="rect" id="node6" href="$classstos.html#add60398fb259ecc3f64cd43c9c74422f" title="metoda remove()&#45; nie przyjmuje wartosci, usuwa najwyzej polozona na stosie dana " alt="" coords="309,107,385,133"/>
+<area shape="rect" id="node8" href="$classkolejka.html#a38392eb78d5c659ed90aff8a8d8b078d" title="kolejka::remove" alt="" coords="289,157,404,184"/>
+<area shape="rect" id="node9" href="$classlista.html#a567ac3ce85a3a7d7b10a3b0aafed56dd" title="lista::remove" alt="" coords="298,208,395,235"/>
+</map>

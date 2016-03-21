@@ -1,0 +1,6 @@
+<map id="tablica::zwieksz" name="tablica::zwieksz">
+<area shape="rect" id="node2" href="$classtablica.html#aa558871f57e678103d92b4038c58623f" title="tablica::push" alt="" coords="169,56,265,83"/>
+<area shape="rect" id="node3" href="$classkolejka.html#a2b9a60c6e42764a419e6e7347c2f4227" title="usuwa pierwsza dana w kolejce " alt="" coords="313,5,405,32"/>
+<area shape="rect" id="node4" href="$classlista.html#aa3b586da2830b20ca5818509a34ed6a6" title="dodaje dana na miejscu o podanym indeksie, jezeli nie moze byc tam wstawiona zglosi wyjatek..." alt="" coords="322,56,397,83"/>
+<area shape="rect" id="node5" href="$classstos.html#add60398fb259ecc3f64cd43c9c74422f" title="metoda remove()&#45; nie przyjmuje wartosci, usuwa najwyzej polozona na stosie dana " alt="" coords="321,107,397,133"/>
+</map>
