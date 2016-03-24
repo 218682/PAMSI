@@ -2,22 +2,20 @@
 using namespace std;
 void stoper::start()
 {
-  time_t czasStart=clock();
-  this->cstart=czasStart/(CLOCKS_PER_SEC*1.0);
+  cstart = std::chrono::high_resolution_clock::now();
 }
 void stoper::stop()
 {
-  time_t czasStop=clock();
-  this->cstop=czasStop/(CLOCKS_PER_SEC*1.0);
+  cstop = std::chrono::high_resolution_clock::now();
 }
-float stoper::getElapsedTime()
+std::chrono::duration<double> stoper::getElapsedTime()
 {
   stop();
   this->ElapsedTime=cstop-cstart;
   start();
   return ElapsedTime;
 }
-float stoper::getTime()
+std::chrono::duration<double> stoper::getTime()
 {
   this->ElapsedTime=cstop-cstart;
   return ElapsedTime;
@@ -35,7 +33,8 @@ bool stoper::dumpToFile (std::string Nazwa)
   else
     if( plik.good() == true )
       {
-	plik<<getTime()<<std::endl;
+	getTime();
+	plik<<ElapsedTime.count()<<std::endl;
 	return true;
       } else std::cout << "Dostep do pliku zostal zabroniony!" << std::endl;
   return false;

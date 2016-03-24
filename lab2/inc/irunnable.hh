@@ -1,11 +1,13 @@
 #ifndef IRUN_HH
 #define IRUN_HH
+#include "stoper.hh"
+#include <cstdlib>
 class iRunnable
 {
 private:
-  int ileOkrazen;
-  int ileDanych;
+  int ileOkrazen=10;
+  int ileDanych=100000000;
 public:
-  bool run();
-  bool prepare();
+  virtual void run()=0;
+  void prepare(int, int);
 };
