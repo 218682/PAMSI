@@ -39,3 +39,5 @@ int lista::get(int i)
   else
     return wyswietl(i); 
 }
+
+

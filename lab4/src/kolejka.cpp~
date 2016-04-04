@@ -7,15 +7,6 @@ void kolejka::add(int x)
 {
     push (x);
 }
-void kolejka::remove(int i)
-{
-  if(isEmpty()==true)
-    throw empty();
-  else if(i!=0)
-    throw bad_index();
-  else
-    zdejmij(i);
-}
 void kolejka::remove()
 {
   if(isEmpty()==true)

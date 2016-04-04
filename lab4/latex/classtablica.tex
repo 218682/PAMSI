@@ -1,0 +1,112 @@
+\section{Dokumentacja klasy tablica}
+\label{classtablica}\index{tablica@{tablica}}
+
+
+Diagram dziedziczenia dla tablica
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{classtablica__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagram współpracy dla tablica\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classtablica__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Komponenty}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf bad\+\_\+index}
+\begin{DoxyCompactList}\small\item\em obiekt zwracany podczas wystapienia wyjatku wystepujacego gdy nastapi proba odzialywania na dane ktorych kontener nie posiada \end{DoxyCompactList}\item 
+class {\bf empty}
+\begin{DoxyCompactList}\small\item\em metoda sprawdza czy kontener jest pusty \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries zmniejsz} ()\label{classtablica_a5e2094ab2deb4aca91905f96e0f01b08}
+
+\item 
+{\bf tablica} ()\label{classtablica_abc5414ba4d6321ecf744e38a809d9c8f}
+
+\begin{DoxyCompactList}\small\item\em zwieksza ilosc zaalokowanej pamieci \end{DoxyCompactList}\item 
+{\bf tablica} (int n)\label{classtablica_a5ee1754d39209bec5987d4cbdf19f210}
+
+\begin{DoxyCompactList}\small\item\em konstruktor bezparametryczny, tworzy tablice o 10 polach \end{DoxyCompactList}\item 
+int {\bf wyswietl} (int n)\label{classtablica_a0c9c746af292f75af844cdd803306fed}
+
+\begin{DoxyCompactList}\small\item\em konstruktor, tworzy tablice o podanej przez urzytkownika ilosci pol \end{DoxyCompactList}\item 
+void {\bfseries push} (int)\label{classtablica_aa558871f57e678103d92b4038c58623f}
+
+\item 
+void {\bf przypisz} (int, int)\label{classtablica_af615accc61dcccf729ea5f31f03c34e2}
+
+\begin{DoxyCompactList}\small\item\em metoda dodajaca dana na ostatnie wolne miejsce tablicy \end{DoxyCompactList}\item 
+void {\bf zdejmij} (int)\label{classtablica_aaab8198682dc839a3e99d2fe9a7ae83c}
+
+\begin{DoxyCompactList}\small\item\em przypisuje podana dana na konkretnym miejscu tablicy, pierwszym parametrem jest dana, a drugim miejsce na ktorym ma byc zapisana \end{DoxyCompactList}\item 
+void {\bf bubblesort} ()\label{classtablica_aad9a923a9ce031b2ecb6ae85645f4393}
+
+\begin{DoxyCompactList}\small\item\em usuwa ostatni element tablicy \end{DoxyCompactList}\item 
+int {\bf size} ()\label{classtablica_a8bd6d80f7531cf88748fe96f3082985b}
+
+\begin{DoxyCompactList}\small\item\em sortowanie bombelkowe \end{DoxyCompactList}\item 
+int {\bf ind} ()\label{classtablica_a6c6f6d3b9c1b5e51b3eb17c9c778c902}
+
+\begin{DoxyCompactList}\small\item\em metoda zwraca ilosc zaalokowanego miejsca \end{DoxyCompactList}\item 
+bool {\bf is\+Empty} ()\label{classtablica_ac0e975ae036568f85ec707bd7c2eba33}
+
+\begin{DoxyCompactList}\small\item\em metoda zwraca ideks na ktorym jest ostatnia dana w kontenerze \end{DoxyCompactList}\item 
+void {\bfseries zmniejsz} ()\label{classtablica_a5e2094ab2deb4aca91905f96e0f01b08}
+
+\item 
+{\bf tablica} ()\label{classtablica_abc5414ba4d6321ecf744e38a809d9c8f}
+
+\begin{DoxyCompactList}\small\item\em zwieksza ilosc zaalokowanej pamieci \end{DoxyCompactList}\item 
+{\bf tablica} (int n)\label{classtablica_a5ee1754d39209bec5987d4cbdf19f210}
+
+\begin{DoxyCompactList}\small\item\em konstruktor bezparametryczny, tworzy tablice o 10 polach \end{DoxyCompactList}\item 
+void {\bf push} (int)\label{classtablica_aa558871f57e678103d92b4038c58623f}
+
+\begin{DoxyCompactList}\small\item\em konstruktor, tworzy tablice o podanej przez urzytkownika ilosci pol \end{DoxyCompactList}\item 
+void {\bf przypisz} (int, int)\label{classtablica_af615accc61dcccf729ea5f31f03c34e2}
+
+\begin{DoxyCompactList}\small\item\em metoda dodajaca dana na ostatnie wolne miejsce tablicy \end{DoxyCompactList}\item 
+void {\bf zdejmij} (int)\label{classtablica_aaab8198682dc839a3e99d2fe9a7ae83c}
+
+\begin{DoxyCompactList}\small\item\em przypisuje podana dana na konkretnym miejscu tablicy, pierwszym parametrem jest dana, a drugim miejsce na ktorym ma byc zapisana \end{DoxyCompactList}\item 
+void {\bf bubblesort} ()\label{classtablica_aad9a923a9ce031b2ecb6ae85645f4393}
+
+\begin{DoxyCompactList}\small\item\em usuwa ostatni element tablicy \end{DoxyCompactList}\item 
+int {\bf size} ()\label{classtablica_a8bd6d80f7531cf88748fe96f3082985b}
+
+\begin{DoxyCompactList}\small\item\em sortowanie bombelkowe \end{DoxyCompactList}\item 
+int {\bf ind} ()\label{classtablica_a6c6f6d3b9c1b5e51b3eb17c9c778c902}
+
+\begin{DoxyCompactList}\small\item\em metoda zwraca ilosc zaalokowanego miejsca \end{DoxyCompactList}\item 
+bool {\bf is\+Empty} ()\label{classtablica_ac0e975ae036568f85ec707bd7c2eba33}
+
+\begin{DoxyCompactList}\small\item\em metoda zwraca ideks na ktorym jest ostatnia dana w kontenerze \end{DoxyCompactList}\item 
+void {\bf run} ()\label{classtablica_a265617058d03a8e546e9aa77ed58c5f7}
+
+\begin{DoxyCompactList}\small\item\em obiekt zwracany podczas wystapienia wyjatku wystepujacego gdy nastapi odwolanie do danych o zlym indeksie \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries ile\+\_\+elem}\label{classtablica_a4ef184aeacceb11941ec2595f6699338}
+
+\end{DoxyCompactItemize}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+inc/{\bf tablica.\+hh}\item 
+inc/{\bf tablicatest.\+hh}\item 
+src/tablica.\+cpp\item 
+src/tablicatest.\+cpp\end{DoxyCompactItemize}

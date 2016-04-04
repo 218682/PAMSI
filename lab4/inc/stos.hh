@@ -5,7 +5,8 @@
 #ifndef STOS_HH
 #define STOS_HH
 #include "tablica.hh"
-class stos: public tablica{
+#include "instos.hh"
+class stos: private tablica, public inStos{
 /*!
 \brief Klasa stos - jeden z abstrakcyjnych typow danych
 
@@ -14,7 +15,6 @@ public:
   stos(); //! \brief konstruktor bezparametryczny 
   void remove(); //! \brief metoda remove()- nie przyjmuje wartosci, usuwa najwyzej polozona na stosie dana
   void add(int); //! \brief metoda add(int)- przyjmuje wartosc int, bedaca nowa liczba do dodania na szczyt stosu
-  int get (int=0); //! \brief metoda get z parametrem int nie powinna byc uzywana, mozliwe jest uzycie jedynie zerowego indeklu, wszystkie inne zwracaja wyjatek,bezpieczniej jest uzywac get()
   int get (); //! \brief metoda get bez parametru- zwraca wartosc ostatniej liczby na stosie
 };
 

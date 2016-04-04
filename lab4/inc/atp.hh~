@@ -2,7 +2,7 @@
 #define ATP_HH
 class atp{
 public:
-  virtual int remove()=0;
+  virtual void remove()=0;
   virtual void add(int dana)=0;
   virtual int get (int index)=0;
   virtual bool isEmpty()=0;

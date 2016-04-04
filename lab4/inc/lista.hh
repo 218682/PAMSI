@@ -5,7 +5,8 @@
 #ifndef LISTA_HH
 #define LISTA_HH
 #include "tablica.hh"
-class lista: public tablica{
+#include "inlista.hh"
+class lista: public tablica, public inLista{
 public:
   lista();
   void remove(int); //! \brief usuwa dana o podanym indeksie, a nastepnie przestawia zmienne

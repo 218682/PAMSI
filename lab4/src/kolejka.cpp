@@ -1,8 +1,5 @@
 #include "kolejka.hh"
 
-kolejka::kolejka(){ile_elem=0;}
-
-
 void kolejka::add(int x)
 {
     push (x);
@@ -13,15 +10,6 @@ void kolejka::remove()
     throw empty();
   else
     zdejmij(0);
-}
-int kolejka::get(int i)
-{
-  if(isEmpty()==true)
-    throw empty();
-  else if (i!=ind() && i!=0)
-    throw bad_index();
-  else
-    return wyswietl(i); 
 }
 int kolejka::first()
 {
