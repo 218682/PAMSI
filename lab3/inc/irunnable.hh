@@ -1,3 +1,4 @@
+//! \file irunnable.hh zawira interfejs do testowania zaimplementowanych algorytmow
 #ifndef IRUN_HH
 #define IRUN_HH
 #include "stoper.hh"

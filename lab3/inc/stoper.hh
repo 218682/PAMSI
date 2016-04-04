@@ -1,3 +1,4 @@
+//! \file stoper.hh zawiera klase stoper odpowiadajaca za mierzenie czasu
 #ifndef STOPER_HH
 #define STOPER_HH
 #include <cstdio>
