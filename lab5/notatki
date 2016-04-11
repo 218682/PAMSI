@@ -1,0 +1,7 @@
+1. Fork repo
+2. umieścić w wybranej strukturze zadane rozmiary problemów N={10, 100, 1000, 10^6, 10^9} np. lista rozmiary;
+	zaimplementować quick sorta
+	zmierzyć czas sortowania dla tablic o rozmiarze N
+		analiza O(n) dla przypadku sredniego i pesymistycznego
+		sprawdzic 2-3 metody piwotowania i ich wpływ na O(n)
+	implementacja Mergesort + testowanie

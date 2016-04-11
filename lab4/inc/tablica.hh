@@ -16,7 +16,7 @@ private:
   int rozmiar;
 public:
   int ile_elem; //ToDo: przerobic klasy tak by ile_elem i zmniejsz() byly prywatne
-  void zmniejsz();//! \brief zwieksza ilosc zaalokowanej pamieci
+  void zmniejsz();                //! \brief zwieksza ilosc zaalokowanej pamieci
   tablica() {rozmiar=10; ile_elem=0;} //! \brief konstruktor bezparametryczny, tworzy tablice o 10 polach
   tablica(int n) {rozmiar=n; ile_elem=0;} //! \brief konstruktor, tworzy tablice o podanej przez urzytkownika ilosci pol
   //void podaj_roz(int M){ this->rozmiar=M;}
