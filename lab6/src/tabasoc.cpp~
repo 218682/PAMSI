@@ -1,0 +1,6 @@
+#include "tabzhasz.hh"
+
+int TabZHasz::search(std::string klucz)
+{
+  return 0;
+}

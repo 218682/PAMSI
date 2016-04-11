@@ -1,0 +1,8 @@
+tablica["klucz"]
+(k,v) k-string, v-dowolny typ
+Tablica asocjacyjna zwykle implementowana przy pomocy tablicy z haszowaniem 
+idealna funkcja skrutu:
+-szybka
+-bez kolizji. lub kolizje z np. rozkładem normalnym
+
+w domu potwierdzenie teori złożoności obliczeniowej odczytu
