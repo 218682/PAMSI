@@ -11,11 +11,11 @@ void listatest::run(int il)
   srand(time(NULL));
   std::string dane="przeszukiwanie listy"+str;
   int losowana=(std::rand()%il);
-  s.start();
   for(int i=0; i<=il; i++)
     {
       add(i);
     }
+  s.start();
   for(int i=0; pom!=losowana && i<il; i++)
     {
       pom=get(i);

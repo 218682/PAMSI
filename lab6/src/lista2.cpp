@@ -1,7 +1,7 @@
 #include "lista2.hh"
 
 lista2::lista2(){FIRST=NULL; rozmiar=0;}
-
+/*
 void lista2::add(int x)
 {
   StrListy *NEW  = new StrListy;
@@ -21,23 +21,25 @@ void lista2::add(int x)
       NEW->NEXT = NULL;
       rozmiar++;
     }
-}
+}*/
 
-//dobra i prosta metoda ale bardziej nadaje sie do stosu niz listy
-/*void lista2::add(int x)  
+//dobra i prosta metoda ale chyba bardziej nadaje sie do stosu niz listy
+void lista2::add(int x)  
 {
   StrListy *NEW  = new StrListy;
   NEW->dana=x;
   NEW->NEXT= FIRST;
   FIRST=NEW;
   rozmiar++;
-  }*/
+  }
 void lista2::add(int x, int index)
 {
   if(index==rozmiar)
     add(x);
   else if(index<rozmiar)
     {
+      //odwrotna kolejnosc zapisu, by szybciej zapisywac nowe dane
+      index=rozmiar-index;
       StrListy *NEW = new StrListy;
       StrListy *tmp = FIRST;
       NEW=FIRST;
@@ -59,6 +61,8 @@ void lista2::remove(int i)
     throw bad_index();
   else
     {
+      //odwrotna kolejnosc zapisu, by szybciej zapisywac nowe dane
+      i=rozmiar-i;
       StrListy *tmp = FIRST;
       if(i==0)
 	{
@@ -79,14 +83,16 @@ void lista2::remove(int i)
 }
 void lista2::remove()
 {
+  
   if(rozmiar==0)
     throw empty();
   else
     {
       StrListy *tmp = FIRST;
-      for(int j=0; tmp && j+1!=rozmiar; j++)
-	tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
-      tmp->NEXT=NULL;
+      FIRST=tmp->NEXT;
+      //for(int j=0; tmp && j+1!=rozmiar; j++)
+      //tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
+      //tmp->NEXT=NULL;
       rozmiar--;
     }
 }
@@ -98,6 +104,8 @@ int lista2::get(int i)
     throw bad_index();
   else
     {
+      //odwrotna kolejnosc zapisu, by szybciej zapisywac nowe dane
+      i=rozmiar-i;
       StrListy *tmp = FIRST;
       for(int j=0; j!=i; j++)
 	tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
