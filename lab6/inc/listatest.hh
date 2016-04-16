@@ -1,21 +1,14 @@
 /*!
 \file
-\brief plik zawiera klase listatest
+\brief plik zawiera klase listatest odpowiadajaca za testowanie listy
 */
-#ifndef LISTA_HH
-#define LISTA_HH
-#include "tablicatest.hh"
-#include "inlista.hh"
+#ifndef LISTAT_HH
+#define LISTAT_HH
+#include "lista2.hh"
 #include "irunnable.hh"
-class listatest: public tablicatest, public inLista{
+class listatest: public iRunnable, public lista2{
 public:
-  lista();
-  void remove(int); //! \brief usuwa dana o podanym indeksie, a nastepnie przestawia zmienne
-  void remove();  //! \brief usuwa ostatnia dana w kolejce
-  void add(int, int); //! \brief dodaje dana na miejscu o podanym indeksie, jezeli nie moze byc tam wstawiona zglosi wyjatek, gdy miejsce jest zajete przestawia dane
-  void add(int); //! \brief dodaje dana na koniec listy
-  int get (int); //! \brief zwraca wartosc na podanym indeksie, jezeli nie moze tego zrobic, zwroci wyjatek
-  void run();
+  void run(int);
 };
 
 #endif

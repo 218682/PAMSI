@@ -5,10 +5,11 @@
 #include <cstdlib>
 class iRunnable
 {
-private:
+protected:
   int ileOkrazen=10;
   int ileDanych=100000000;
 public:
-  virtual void run()=0;
+  virtual void run(int)=0;
   void prepare(int, int);
 };
+#endif

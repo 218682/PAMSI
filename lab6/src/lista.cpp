@@ -12,7 +12,7 @@ void lista::add(int x, int index)
 }
 void lista::remove(int i)
 {
-  if(isEmpty()==true)
+  if(tablica::isEmpty()==true)
     throw empty();
   else if(i>ind())
     throw bad_index();
@@ -21,14 +21,14 @@ void lista::remove(int i)
 }
 void lista::remove()
 {
-  if(isEmpty()==true)
+  if(tablica::isEmpty()==true)
     throw empty();
   else
     zdejmij(ind());
 }
 int lista::get(int i)
 {
-  if(isEmpty()==true)
+  if(tablica::isEmpty()==true)
     throw empty();
   else if (i>ind())
     throw bad_index();
@@ -36,4 +36,7 @@ int lista::get(int i)
     return wyswietl(i); 
 }
 
-
+bool lista::isEmpty()
+{
+  return tablica::isEmpty();
+}
