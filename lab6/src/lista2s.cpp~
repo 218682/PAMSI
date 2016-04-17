@@ -1,5 +1,5 @@
 #include "lista2.hh"
-
+#include <iostream>
 lista2::lista2(){FIRST=NULL; rozmiar=0;}
 /*
 void lista2::add(int x)
@@ -21,9 +21,10 @@ void lista2::add(int x)
       NEW->NEXT = NULL;
       rozmiar++;
     }
-}*/
-
+}
+*/
 //dobra i prosta metoda ale chyba bardziej nadaje sie do stosu niz listy
+
 void lista2::add(int x)  
 {
   StrListy *NEW  = new StrListy;
@@ -38,8 +39,6 @@ void lista2::add(int x, int index)
     add(x);
   else if(index<rozmiar)
     {
-      //odwrotna kolejnosc zapisu, by szybciej zapisywac nowe dane
-      index=rozmiar-index;
       StrListy *NEW = new StrListy;
       StrListy *tmp = FIRST;
       NEW=FIRST;
@@ -52,7 +51,7 @@ void lista2::add(int x, int index)
     }
   else
     throw bad_index();
-}
+    }
 void lista2::remove(int i)
 {
   if(rozmiar==0)
@@ -61,8 +60,6 @@ void lista2::remove(int i)
     throw bad_index();
   else
     {
-      //odwrotna kolejnosc zapisu, by szybciej zapisywac nowe dane
-      i=rozmiar-i;
       StrListy *tmp = FIRST;
       if(i==0)
 	{
@@ -73,9 +70,15 @@ void lista2::remove(int i)
 	  for(int j=0; tmp && j+1!=i; j++)
 	    tmp = tmp->NEXT;          //przeskakiwanie do odpowiedniego elementu
 	  if (tmp->NEXT->NEXT==NULL)
-	    tmp->NEXT=NULL;
+	    {
+	      delete tmp->NEXT;
+	      tmp->NEXT=NULL;
+	    }
 	  else
-	    tmp->NEXT=tmp->NEXT->NEXT;
+	    {
+	      delete tmp->NEXT; //zwalnianie pamieci
+	      tmp->NEXT=tmp->NEXT->NEXT;
+	    }
 	}
       rozmiar--;
     }
@@ -89,10 +92,10 @@ void lista2::remove()
   else
     {
       StrListy *tmp = FIRST;
-      FIRST=tmp->NEXT;
-      //for(int j=0; tmp && j+1!=rozmiar; j++)
-      //tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
-      //tmp->NEXT=NULL;
+      for(int j=0; tmp && j+1!=rozmiar; j++)
+      tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
+      delete tmp->NEXT;             //zwalnianie pamieci
+      tmp->NEXT=NULL;
       rozmiar--;
     }
 }
@@ -100,12 +103,10 @@ int lista2::get(int i)
 {
   if(rozmiar==0)
     throw empty();
-  else if (i>rozmiar)
+  else if (i>rozmiar || i<0)
     throw bad_index();
   else
     {
-      //odwrotna kolejnosc zapisu, by szybciej zapisywac nowe dane
-      i=rozmiar-i;
       StrListy *tmp = FIRST;
       for(int j=0; j!=i; j++)
 	tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
@@ -117,4 +118,24 @@ bool lista2::isEmpty()
   if(rozmiar==0)
     return true;
   else return false;
+}
+int lista2::size()
+{
+  return rozmiar;
+}
+int lista2::find(int x)
+{
+  if(rozmiar==0)
+    throw empty();
+  else
+    {
+      int j=0;
+      StrListy *tmp = FIRST;
+      for(j=0; tmp->dana!=x && tmp->NEXT!=NULL; j++)
+	tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
+      if (tmp->NEXT!=NULL)
+	return j;
+      else
+	throw empty();
+    }
 }

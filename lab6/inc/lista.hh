@@ -6,7 +6,7 @@
 #define LISTA_HH
 #include "tablica.hh"
 #include "inlista.hh"
-class lista: public tablica, public inLista{
+class lista: public tablica, public inLista<int>{
 public:
   //! konstruktor bezparametryczny
   lista();
@@ -16,6 +16,7 @@ public:
   void add(int);
   int get (int);
   bool isEmpty();
+  int size();
 };
 
 #endif

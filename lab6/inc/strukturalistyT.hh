@@ -2,15 +2,16 @@
 \file
 \brief plik zawiera strukture potrzebna do dzialania listy
 */
-#ifndef STRLISTY_HH
-#define STRLISTY_HH
+#ifndef STRLISTYT_HH
+#define STRLISTYT_HH
 #include "inlista.hh"
 #include <string>
-struct StrListy{
+template <class typ>
+struct StrListyT{
 public:
   //std::string dana;
-  int dana;
-  StrListy *NEXT;
-  StrListy(){NEXT=NULL;}
+  typ dana;
+  StrListyT *NEXT;
+  StrListyT(){NEXT=NULL;}
 };
 #endif

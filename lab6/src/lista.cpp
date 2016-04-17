@@ -40,3 +40,7 @@ bool lista::isEmpty()
 {
   return tablica::isEmpty();
 }
+int lista::size()
+{
+  return tablica::size();
+}
