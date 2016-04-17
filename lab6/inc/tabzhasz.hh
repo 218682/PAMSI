@@ -1,21 +1,21 @@
 #ifndef TABLICAZHASZOWANIEM_HH
 #define TABLICAZHASZOWANIEM_HH
-#include "lista.hh"
-#include "TabAsoc"
+#include "tabasoc.hh"
+#include "itabzhasz.hh"
 class TabZHasz: public ITabZHasz
 {
 private:
   //! ilość kontenerow z danymi
-  int n;
+  int ilosc;
   //! zbior tablic asocjacyjnych z odpowiednio ulokowanymi danymi
-  TabAsoc tab[n];
+  TabAsoc *tab= new TabAsoc[ilosc];
   TabAsoc kluczowanie (std::string);
 public:
   TabAsoc operator [] (std::string);
   //! konstruktor bezparametryczny, zaklada ze liczba kontenerow = 10
-  TabZHasz(){n=10;}
+  TabZHasz(){ilosc=10;}
   //! konstruktor z jednym parametrem okreslajacym ilosc kontenerow z danymi
-  TabZHasz(int ile){n=ile;}
+  TabZHasz(int ile){ilosc=ile;}
 };
 
 #endif

@@ -1,28 +1,43 @@
 #include "tabzhasztest.hh"
-void TabZHaszTest:run(int i)
+#include <iostream>
+#include <sstream>
+#include <string>
+void TabZHaszTest::run(int il)
 {
   stoper s;
   int pom=-1;
-  TabZHasz Tab;
+  TabZHasz Hasz;
+  Dictionary dict; 
+  int i;
   std::stringstream ss;
   std::string str;
+  
   ss << il;
   ss >> str;
-  srand(time(NULL));
   std::string dane="przeszukiwanie tabzhasz "+str;
-  int losowana=(std::rand()%il);
+  //-----------------------------------------------//
+  std::string *slowa= new std::string[il]; 
+  //**********************************************************************
+  dict.setWords();		      	//kod zaporzyczony z poprzedniego
+  for (i=0; i<il;i++)                  //__________________________________
+    {                                 //
+      slowa[i]=dict.RandomWords();   //cwiczenia dotyczacego sortowania
+    }                               //
+  //************************************************************************
   s.start();
-  for(int i=0; i<=il; i++)
+  for(i=0; i<il; i++)
     {
-      Tab[losowe slowo].insert(losowe slowo, i);
+      Hasz[slowa[i]].insert(slowa[i], i);
     }
-  s.stop();
+  s.stop(); 
+  //------------------------------------------------------------------------
   s.dumpToFile("zapis "+str);
+  i=rand()%il;
   s.start();
-  Tab[losowe slowo].find
+  //pom=Hasz[slowa[i]].search(slowa[i]);
   s.stop();
+    std::cout<<"hellow4"<<std::endl; 
   // std::cout<<s.getTime().count()<<std::endl;
   s.dumpToFile(dane);
-  std::cout<<losowana<<std::endl;
-  std::cout<<pom<<std::endl;   
+  std::cout<<slowa[pom]<<std::endl;   
 }

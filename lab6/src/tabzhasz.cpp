@@ -1,14 +1,22 @@
 #include "tabzhasz.hh"
+#include <sstream>
+#include <iostream>
 TabAsoc TabZHasz::kluczowanie(std::string haslo)
 {
+  /*
+  std::stringstream ss;
+  int x;
   int klucz=0;
+  ss<<haslo;
+  ss>>x;
+  klucz=x%ilosc;*/
+  int klucz=-1;
   std::string alfabet="abcdefghijklmnopqrstuwvxyz";
-  if(n<size)
-  for(int i=n-1; i>=0 || haslo>alfabet[(size)*i/n]; i--)
+  if(ilosc<alfabet.size())
+    for(int i=ilosc-1; i>=0 && haslo[0]<alfabet[(alfabet.size())*i/ilosc]; i--)
     {
-      if(haslo>alfabet[(size)*i/n])
       klucz=i;
-    }
+      };
   return tab[klucz];
 }
 TabAsoc TabZHasz::operator [](std::string haslo)

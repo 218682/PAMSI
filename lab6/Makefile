@@ -7,10 +7,12 @@ __start__: start
 	./start
 
 start: obj obj/main.o obj/stoper.o obj/tablica.o obj/stos.o obj/kolejka.o \
-	 obj/listatest.o 
+	 obj/listatest.o obj/tabasoc.o obj/tabzhasz.o obj/Dictionary.o \
+	  obj/tabzhasztest.o inc/lista2s.hh
 	g++ -Wall -pedantic -std=c++11 -o start obj/main.o \
 	 obj/stoper.o obj/tablica.o obj/stos.o obj/kolejka.o \
-	   obj/listatest.o
+	   obj/listatest.o obj/tabzhasz.o obj/tabasoc.o obj/Dictionary.o \
+	    obj/tabzhasztest.o
 
 obj:
 	mkdir obj
@@ -18,6 +20,9 @@ obj:
 
 obj/main.o: src/main.cpp  inc/stoper.hh inc/tablica.hh inc/stos.hh inc/kolejka.hh
 	g++ -c ${CXXFLAGS} -o obj/main.o src/main.cpp
+
+obj/tabzhasztest.o: src/tabzhasztest.cpp  inc/tabzhasztest.hh
+	g++ -c ${CXXFLAGS} -o obj/tabzhasztest.o src/tabzhasztest.cpp
 
 obj/tabzhasz.o: src/tabzhasz.cpp  inc/tabzhasz.hh
 	g++ -c ${CXXFLAGS} -o obj/tabzhasz.o src/tabzhasz.cpp
@@ -33,6 +38,9 @@ obj/listatest.o: src/listatest.cpp  inc/listatest.hh inc/lista2s.hh
 
 #obj/lista2.o: src/lista2.cpp  inc/lista2.hh inc/strukturalisty.hh
 #	g++ -c ${CXXFLAGS} -o obj/lista2.o src/lista2.cpp
+
+obj/Dictionary.o: src/Dictionary.cpp inc/Dictionary.h
+	g++ -c ${CXXFLAGS} -o obj/Dictionary.o src/Dictionary.cpp
 
 obj/kolejka.o: src/kolejka.cpp  inc/kolejka.hh inc/tablica.hh
 	g++ -c ${CXXFLAGS} -o obj/kolejka.o src/kolejka.cpp

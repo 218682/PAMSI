@@ -7,11 +7,12 @@
 #include "inlista.hh"
 #include "strukturalistyT.hh"
 #include <string>
+#include <iostream>
 template <class typ> class lista2s: public inLista<typ>
 {
 protected:
   StrListyT <typ> *FIRST;
-  int rozmiar;
+  int rozmiar=0;
 public:
   //! konstruktor bezparametryczny
   lista2s(){FIRST=NULL; rozmiar=0;};
@@ -37,29 +38,39 @@ void lista2s<typ>::add(typ x)
   NEW->dana=x;
   NEW->NEXT=FIRST;
   FIRST=NEW;
-  rozmiar++;
+  this->rozmiar++;
   }
 //-------------------------------------------------//
 template <class typ>
-void lista2s<typ>::add(typ x, int index)
+void lista2s<typ>::add(typ x, int i)
 {
-  if(index==rozmiar)
-    add(x);
-  else if(index<rozmiar)
-    {
-      StrListyT <typ> *NEW = new StrListyT <typ>;
-      StrListyT <typ> *tmp = FIRST;
-      NEW=FIRST;
-      for(int j=0; j+1!=index; j++)//przeskakiwanie do odpowiedniego elementu
-	tmp = tmp->NEXT;
-      NEW->dana=x;
-      NEW->NEXT=tmp;
-      tmp->NEXT=NEW;
-      rozmiar++;
-    }
-  else
+  if(rozmiar==0)
+    throw empty();
+  else if(i>rozmiar)
     throw bad_index();
+  else
+    {
+      StrListyT <typ> *tmp = FIRST;
+      if(i==0)
+	{
+	  FIRST=tmp->NEXT;
+	}
+      else if(i>=1)
+	{
+	  for(int j=0; tmp && j+1!=i; j++)
+	    tmp = tmp->NEXT;          //przeskakiwanie do odpowiedniego elementu
+	  if (tmp->NEXT->NEXT==NULL)
+	    {
+	      tmp->NEXT=NULL;
+	    }
+	  else
+	    {
+	      tmp->NEXT=tmp->NEXT->NEXT;
+	    }
+	}
+      this->rozmiar--;
     }
+}
 //-------------------------------------------------//
 template <class typ>
 void lista2s<typ>::remove(int i)
@@ -74,24 +85,24 @@ void lista2s<typ>::remove(int i)
       if(i==0)
 	{
 	  FIRST=tmp->NEXT;
-	  delete tmp;
+	  //delete tmp;
 	}
       else if(i>=1)
 	{
-	  for(int j=0; tmp && j+1!=i; j++)
+	  for(int j=0; tmp && j+1!=i; j++) 
 	    tmp = tmp->NEXT;          //przeskakiwanie do odpowiedniego elementu
 	  if (tmp->NEXT->NEXT==NULL)
 	    {
-	      delete tmp->NEXT;
+	      //delete tmp->NEXT;
 	      tmp->NEXT=NULL;
 	    }
 	  else
 	    {
-	      delete tmp->NEXT; //zwalnianie pamieci
+	      // delete tmp->NEXT; //zwalnianie pamieci
 	      tmp->NEXT=tmp->NEXT->NEXT;
 	    }
 	}
-      rozmiar--;
+     this->rozmiar--;
     }
 }
 //-------------------------------------------------//
@@ -105,12 +116,12 @@ void lista2s<typ>::remove()
     {
       StrListyT <typ> *tmp = FIRST;
       FIRST=tmp->NEXT;
-      delete tmp;         //zwalnianie pamieci
+      //delete tmp;         //zwalnianie pamieci
       /*for(int j=0; tmp && j+1!=rozmiar; j++)
       tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
       delete tmp->NEXT;             //zwalnianie pamieci
       tmp->NEXT=NULL;*/
-      rozmiar--;
+      this->rozmiar--;
     }
 }
 //-------------------------------------------------//
@@ -155,7 +166,7 @@ int lista2s<typ>::find(typ x)
       StrListyT <typ> *tmp = FIRST;
       for(j=0; tmp->dana!=x && tmp->NEXT!=NULL; j++)
 	tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
-      if (tmp->NEXT!=NULL)
+      if (tmp!=NULL)
 	return j;
       else
 	throw empty();

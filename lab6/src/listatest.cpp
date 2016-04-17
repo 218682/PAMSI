@@ -8,7 +8,6 @@ void listatest::run(int il)
   std::string str;
   ss << il;
   ss >> str;
-  srand(time(NULL));
   std::string dane="przeszukiwanie listy"+str;
   int losowana=(std::rand()%il);
   s.start();

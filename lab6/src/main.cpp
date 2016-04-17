@@ -2,33 +2,33 @@
 #include<cstring>
 #include<ctime>
 #include<cstdlib>
-#include "kolejka.hh"
-#include "stos.hh"
-#include "stoper.hh"
-#include "lista.hh"
-#include "sort.hh"
-#include "tabasoc.hh"
-#include "listatest.hh"
+#include <sstream>
+#include <string>
 #include "lista2s.hh"
+#include "tabzhasztest.hh"
 int main (void)
 {
+
   int i=0;
-  listatest l;
+  TabZHaszTest l;
   lista2s<int> rozmiary;
+  srand(time(NULL));
   for(int j=0; j<10; j++)
     {
+      std::cout<<"tutaj "<<std::endl;
       rozmiary.add(10);
       rozmiary.add(100);
-      rozmiary.add(1000);
+      //rozmiary.add(1000);
       //rozmiary.add(1000000);
-      //      rozmiary.add(100000000);
-      /*-----------------------*/
+      //rozmiary.add(100000000);
+      //-----------------------
       while(rozmiary.isEmpty()==false)
 	{
 	  std::cout<<rozmiary.get(i)<<std::endl;
 	  l.run(rozmiary.get(i));	
-	  rozmiary.remove(i);
+	  rozmiary.remove();
 	}
+      std::cout<<std::endl;
     }
   return 0;
 }

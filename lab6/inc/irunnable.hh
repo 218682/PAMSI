@@ -3,8 +3,7 @@
 #define IRUN_HH
 #include "stoper.hh"
 #include <cstdlib>
-class iRunnable
-{
+class iRunnable{
 protected:
   int ileOkrazen=10;
   int ileDanych=100000000;
