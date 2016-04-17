@@ -17,9 +17,9 @@ TabAsoc TabZHasz::kluczowanie(std::string haslo)
     {
       klucz=i;
       };
-  return tab[klucz];
+  return this->tab[klucz];
 }
 TabAsoc TabZHasz::operator [](std::string haslo)
 {
-  return TabZHasz::kluczowanie(haslo);
+  return this->kluczowanie(haslo);
 }

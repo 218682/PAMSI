@@ -1,6 +1,5 @@
 #ifndef TABLICAZHASZOWANIEM_HH
 #define TABLICAZHASZOWANIEM_HH
-#include "tabasoc.hh"
 #include "itabzhasz.hh"
 class TabZHasz: public ITabZHasz
 {

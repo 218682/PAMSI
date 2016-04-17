@@ -6,7 +6,7 @@ void TabZHaszTest::run(int il)
 {
   stoper s;
   int pom=-1;
-  TabZHasz Hasz;
+  TabZHasz Hasz(1);
   Dictionary dict; 
   int i;
   std::stringstream ss;
@@ -19,10 +19,10 @@ void TabZHaszTest::run(int il)
   std::string *slowa= new std::string[il]; 
   //**********************************************************************
   dict.setWords();		      	//kod zaporzyczony z poprzedniego
-  for (i=0; i<il;i++)                  //__________________________________
+  for (i=0; i<il;i++)                  //cwiczenia dotyczacego sortowania
     {                                 //
-      slowa[i]=dict.RandomWords();   //cwiczenia dotyczacego sortowania
-    }                               //
+      slowa[i]=dict.RandomWords();   //
+    }                               //__________________________________
   //************************************************************************
   s.start();
   for(i=0; i<il; i++)

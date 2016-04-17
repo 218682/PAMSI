@@ -9,7 +9,7 @@
 class lista: public tablica, public inLista<int>{
 public:
   //! konstruktor bezparametryczny
-  lista();
+  //lista();
   void remove(int);
   void remove();
   void add(int, int);

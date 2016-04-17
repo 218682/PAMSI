@@ -6,11 +6,10 @@
 #define KOLEJKA_HH
 #include "tablica.hh"
 #include "inkolejka.hh"
+/*!
+  \brief Klasa kolejka - jeden z abstrakcyjnych typow danych
+  Klasa ma w swoim skladzie metody sluzace do zarzadzania kolejka, wszytskie operacje poza dodaniem nowej danej do pustej kolejki zglaszaja wyjatek*/
 class kolejka: private tablica, public inKolejka{
-  /*!
-\brief Klasa kolejka - jeden z abstrakcyjnych typow danych
-
-Klasa ma w swoim skladzie metody sluzace do zarzadzania kolejka, wszytskie operacje poza dodaniem nowej danej do pustej kolejki zglaszaja wyjatek*/
 public:
   kolejka();
   void remove(); //! \brief usuwa pierwsza dana w kolejce

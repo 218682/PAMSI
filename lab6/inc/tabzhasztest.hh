@@ -3,7 +3,7 @@
 #include "tabzhasz.hh"
 #include "irunnable.hh"
 #include "Dictionary.h"
-class TabZHaszTest: public TabZHasz, public iRunnable{
+class TabZHaszTest: public iRunnable{
 public:
   void run(int);
 };

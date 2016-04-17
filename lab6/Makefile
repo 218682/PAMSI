@@ -8,11 +8,11 @@ __start__: start
 
 start: obj obj/main.o obj/stoper.o obj/tablica.o obj/stos.o obj/kolejka.o \
 	 obj/listatest.o obj/tabasoc.o obj/tabzhasz.o obj/Dictionary.o \
-	  obj/tabzhasztest.o inc/lista2s.hh
+	  obj/tabzhasztest.o inc/lista2s.hh obj/lista.o
 	g++ -Wall -pedantic -std=c++11 -o start obj/main.o \
 	 obj/stoper.o obj/tablica.o obj/stos.o obj/kolejka.o \
 	   obj/listatest.o obj/tabzhasz.o obj/tabasoc.o obj/Dictionary.o \
-	    obj/tabzhasztest.o
+	    obj/tabzhasztest.o obj/lista.o
 
 obj:
 	mkdir obj
@@ -33,8 +33,8 @@ obj/tabasoc.o: src/tabasoc.cpp  inc/tabasoc.hh inc/itabasoc.hh
 obj/listatest.o: src/listatest.cpp  inc/listatest.hh inc/lista2s.hh
 	g++ -c ${CXXFLAGS} -o obj/listatest.o src/listatest.cpp
 
-#obj/lista.o: src/lista.cpp  inc/lista.hh inc/tablica.hh
-#	g++ -c ${CXXFLAGS} -o obj/lista.o src/lista.cpp
+obj/lista.o: src/lista.cpp  inc/lista.hh inc/tablica.hh
+	g++ -c ${CXXFLAGS} -o obj/lista.o src/lista.cpp
 
 #obj/lista2.o: src/lista2.cpp  inc/lista2.hh inc/strukturalisty.hh
 #	g++ -c ${CXXFLAGS} -o obj/lista2.o src/lista2.cpp

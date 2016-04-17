@@ -4,7 +4,6 @@
 */
 #ifndef STRLISTYT_HH
 #define STRLISTYT_HH
-#include "inlista.hh"
 #include <string>
 template <class typ>
 struct StrListyT{

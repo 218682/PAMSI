@@ -6,7 +6,6 @@
 #define LISTA2s_HH
 #include "inlista.hh"
 #include "strukturalistyT.hh"
-#include <string>
 #include <iostream>
 template <class typ> class lista2s: public inLista<typ>
 {
@@ -44,32 +43,22 @@ void lista2s<typ>::add(typ x)
 template <class typ>
 void lista2s<typ>::add(typ x, int i)
 {
-  if(rozmiar==0)
-    throw empty();
-  else if(i>rozmiar)
-    throw bad_index();
-  else
+  if(i==rozmiar)
+    add(x);
+  else if(i<rozmiar)
     {
-      StrListyT <typ> *tmp = FIRST;
-      if(i==0)
-	{
-	  FIRST=tmp->NEXT;
-	}
-      else if(i>=1)
-	{
-	  for(int j=0; tmp && j+1!=i; j++)
-	    tmp = tmp->NEXT;          //przeskakiwanie do odpowiedniego elementu
-	  if (tmp->NEXT->NEXT==NULL)
-	    {
-	      tmp->NEXT=NULL;
-	    }
-	  else
-	    {
-	      tmp->NEXT=tmp->NEXT->NEXT;
-	    }
-	}
-      this->rozmiar--;
+      StrListyT <typ> *NEW=new StrListyT <typ>;
+      StrListyT <typ> *tmp= FIRST;
+      NEW=FIRST;
+      for(int j=0; j+1!=i;j++)
+	tmp=tmp->NEXT;
+      NEW->dana=x;
+      NEW->NEXT=tmp;
+      tmp->NEXT=NEW;
+      this->rozmiar++;
     }
+  else
+    throw bad_index();
 }
 //-------------------------------------------------//
 template <class typ>

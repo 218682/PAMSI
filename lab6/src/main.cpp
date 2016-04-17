@@ -5,6 +5,7 @@
 #include <sstream>
 #include <string>
 #include "lista2s.hh"
+#include "lista.hh"
 #include "tabzhasztest.hh"
 int main (void)
 {
@@ -25,7 +26,7 @@ int main (void)
       while(rozmiary.isEmpty()==false)
 	{
 	  std::cout<<rozmiary.get(i)<<std::endl;
-	  l.run(rozmiary.get(i));	
+	  l.run(rozmiary.get(i));
 	  rozmiary.remove();
 	}
       std::cout<<std::endl;
