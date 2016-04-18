@@ -23,7 +23,7 @@ public:
   //! \brief konstruktor, tworzy tablice o podanej przez urzytkownika ilosci pol
   tablica(int n) {rozmiar=n; ile_elem=0;} 
   //void podaj_roz(int M){ this->rozmiar=M;}
-  int wyswietl(int n) {return tab[n];}
+  int get(int n) {return tab[n];}
   void push(int);
   void przypisz(int, int); 
   void zdejmij(int);
