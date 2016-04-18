@@ -16,12 +16,12 @@ int kolejka::first()
   if(isEmpty()==true)
     throw empty();
   else
-    return wyswietl(0);
+    return tablica<int>::get(0);
 }
 int kolejka::last()
 {
   if(isEmpty()==true)
     throw empty();
   else
-    return wyswietl(ind()); 
+    return tablica<int>::get(ind()); 
 }

@@ -6,10 +6,11 @@
 #include <string>
 class TabAsoc: public ITabAsoc{
 private:
-  lista2s<std::string> haslo;
+  lista<std::string> haslo;
   //lista2s<int> wartosci;
-  lista wartosci;
+  lista<int> wartosci;
 public:
+  TabAsoc(){std::cout<<"konstruktor TabAsoc"<<std::endl;}
   int search(std::string);
   void insert(std::string, int);
 };

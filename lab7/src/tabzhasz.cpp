@@ -1,7 +1,7 @@
 #include "tabzhasz.hh"
 #include <sstream>
 #include <iostream>
-TabAsoc TabZHasz::kluczowanie(std::string haslo)
+int TabZHasz::kluczowanie(std::string haslo)
 {
   /*
   std::stringstream ss;
@@ -17,9 +17,9 @@ TabAsoc TabZHasz::kluczowanie(std::string haslo)
     {
       klucz=i;
       };
-  return this->tab[klucz];
+  return klucz;
 }
 TabAsoc TabZHasz::operator [](std::string haslo)
 {
-  return this->kluczowanie(haslo);
+  return tab[kluczowanie(haslo)];
 }

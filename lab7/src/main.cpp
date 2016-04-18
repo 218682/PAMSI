@@ -9,11 +9,10 @@
 #include "tabzhasztest.hh"
 int main (void)
 {
-
+  // TabZHasz h;
   int i=0;
   TabZHaszTest l;
   lista2s<int> rozmiary;
-  srand(time(NULL));
   for(int j=0; j<10; j++)
     {
       std::cout<<"tutaj "<<std::endl;
@@ -30,6 +29,6 @@ int main (void)
 	  rozmiary.remove();
 	}
       std::cout<<std::endl;
-    }
+      }
   return 0;
 }
