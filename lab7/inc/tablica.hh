@@ -13,7 +13,7 @@ Klasa ma w swoim skladzie metody sluzace do zarzadzania tablica dynamiczna uzywa
 template <class typ>
 class tablica: public inTablica<typ>{
 private:
-  typ *tab=new typ[rozmiar];
+  typ *tab;
   //! \brief zwieksza ilosc zaalokowanej pamieci
   void zwieksz(typ);
   int rozmiar;
@@ -23,10 +23,10 @@ public:
   void zmniejsz();
   
   //! \brief konstruktor bezparametryczny, tworzy tablice o 10 polach
-  tablica() {rozmiar=10; ile_elem=0;}
+  tablica() {rozmiar=10; ile_elem=0; tab=new typ[rozmiar];}
   
   //! \brief konstruktor, tworzy tablice o podanej przez urzytkownika ilosci pol
-  tablica(int n) {rozmiar=n; ile_elem=0;}
+  tablica(int n) {rozmiar=n; ile_elem=0; tab=new typ[rozmiar];}
   
   //void podaj_roz(int M){ this->rozmiar=M;}
   typ get(int n) {return tab[n];}
@@ -53,9 +53,13 @@ template <class typ>
 void tablica<typ>::push(typ dana)
 {
   if(ile_elem<size())
-    this->tab[ile_elem]=dana;//dopisuje dana na pierwsze wolne miejsce tablicy 
+    {
+      this->tab[ile_elem]=dana;//dopisuje dana na pierwsze wolne miejsce tablicy
+    }
   else
-    zwieksz(dana);
+    {
+      zwieksz(dana);
+    }
   this->ile_elem++; //nalicza ilosc zapisanych danych
 }
 //_________________________________________________________________//

@@ -9,19 +9,37 @@
 #include "tabzhasztest.hh"
 int main (void)
 {
-
-  int i=0;
-  TabZHaszTest l;
+  /*
+std::fstream plik;
+ std::string znaki;
+ std::string wyraz;
+ int dlugosc;
+ plik.open("dictionary.txt", std::ios::app);
+ for(int j=0; j<1000000; j++)
+   {
+     wyraz="";
+     znaki="qwertyuioplkjhgfdsazxcvbnm!@#$%^&*_+=-1234567890";
+     dlugosc=rand()%11+4;//max rozmiar = 15 znakow
+     for(int i=0; i<dlugosc; i++)
+       {
+	 wyraz=wyraz+znaki[rand()%znaki.length()];
+       }
+     std::cout<<wyraz<<std::endl;
+     plik<<wyraz<<std::endl;
+     }*/
+  //=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+   int i=0;
   lista2s<int> rozmiary;
+  TabZHaszTest l;
   srand(time(NULL));
   for(int j=0; j<10; j++)
     {
       std::cout<<"tutaj "<<std::endl;
       rozmiary.add(10);
       rozmiary.add(100);
-      //rozmiary.add(1000);
-      //rozmiary.add(1000000);
-      //rozmiary.add(100000000);
+      rozmiary.add(1000);
+      rozmiary.add(100000);
+      rozmiary.add(1000000);
       //-----------------------
       while(rozmiary.isEmpty()==false)
 	{
@@ -30,6 +48,6 @@ int main (void)
 	  rozmiary.remove();
 	}
       std::cout<<std::endl;
-    }
+      }
   return 0;
 }

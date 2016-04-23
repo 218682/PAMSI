@@ -2,10 +2,10 @@
 \file
 \brief plik zawiera klase tablicatest
 */
-#ifndef TABLICA_HH
-#define TABLICA_HH
+#ifndef TABLICATEST_HH
+#define TABLICATEST_HH
 #include "intablica.hh"
-class tablica: public inTablica, public iRunnable{
+class tablicatest: public inTablica, public iRunnable{
 /*!
 \brief Klasa tablicatest
 

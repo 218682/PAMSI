@@ -6,7 +6,6 @@
 #define LISTA2s_HH
 #include "inlista.hh"
 #include "strukturalistyT.hh"
-#include <iostream>
 template <class typ> class lista2s: public inLista<typ>
 {
 protected:

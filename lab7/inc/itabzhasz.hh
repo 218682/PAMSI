@@ -6,7 +6,7 @@ class ITabZHasz
 {
 public:
   //!przeciazenie operatora przypisuje ciagowi znakow liczbe
-  virtual TabAsoc operator[] (std::string)=0;
+  virtual TabAsoc &operator[] (const std::string)=0;
 };
 
 #endif

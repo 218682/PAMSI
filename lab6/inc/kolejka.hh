@@ -9,13 +9,13 @@
 /*!
   \brief Klasa kolejka - jeden z abstrakcyjnych typow danych
   Klasa ma w swoim skladzie metody sluzace do zarzadzania kolejka, wszytskie operacje poza dodaniem nowej danej do pustej kolejki zglaszaja wyjatek*/
-class kolejka: private tablica, public inKolejka{
+class kolejka: private tablica<int>, public inKolejka{
 public:
   kolejka();
-  void remove(); //! \brief usuwa pierwsza dana w kolejce
-  void add(int); //! \brief dodaje dana na koniec kolejki
-  int first(); //! \brief zwraca wartosc pierwszej danej
-  int last();  //! \brief zwraca wartosc ostatniej danej
+  void remove();
+  void add(int);
+  int first();
+  int last(); 
 };
 
 #endif

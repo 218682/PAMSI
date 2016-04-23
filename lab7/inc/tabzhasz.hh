@@ -5,21 +5,21 @@ class TabZHasz: public ITabZHasz
 {
 private:
   //! ilość kontenerow z danymi
-  int ilosc=10;
+  int ilosc;
+  
   //! zbior tablic asocjacyjnych z odpowiednio ulokowanymi danymi
-  TabAsoc *tab= new TabAsoc[ilosc];
-  //TabAsoc tab[ilosc];
+  TabAsoc *tab;
+
   //!metoda ktora przypisuje do cagu znakow odpowiednia liczbe
   int kluczowanie (std::string);
-public:
   
+public: 
   //! konstruktor bezparametryczny, zaklada ze liczba kontenerow = 10
-  TabZHasz(){ilosc=10; std::cout<<"konstruktor TabZHasz"<<std::endl;}
-  ~TabZHasz(){ilosc=10; std::cout<<"destruktor TabZHasz"<<std::endl;}
+  TabZHasz(){ilosc=10; tab= new TabAsoc[ilosc];}
   //! konstruktor z jednym parametrem okreslajacym ilosc kontenerow z danymi
-  TabZHasz(int ile){ilosc=ile;}
+  TabZHasz(int ile){ilosc=ile; tab= new TabAsoc[ilosc];}
   
-  TabAsoc operator [] (std::string);
+  TabAsoc & operator [] (std::string);
 };
 
 #endif

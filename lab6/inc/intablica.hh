@@ -5,15 +5,16 @@
 #ifndef INTABLICA_HH
 #define INTABLICA_HH
 //! class inTablica- interfejs do tablicy dynamicznie realokujacej miejsce
+template <class typ>
 class inTablica{
 public:
   //! \brief metoda dodajaca dana na ostatnie wolne miejsce tablicy
-  virtual void push(int)=0;
+  virtual void push(typ)=0;
   
   //! \brief przypisuje podana dana na konkretnym miejscu tablicy, pierwszym parametrem jest dana, a drugim miejsce na ktorym ma byc zapisana
-  virtual void przypisz(int, int)=0;
+  virtual void przypisz(typ, int)=0;
   
-  //! \brief usuwa ostatni element tablicy
+  //! \brief usuwa podany element tablicy
   virtual void zdejmij(int)=0;
 
   //! \brief metoda zwraca ilosc zaalokowanego miejsca

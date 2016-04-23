@@ -5,11 +5,13 @@
 #include "itabasoc.hh"
 #include <string>
 class TabAsoc: public ITabAsoc{
-private:
-  lista2s<std::string> haslo;
+protected:
+  //lista2s<std::string> haslo;
+  lista<std::string> *haslo;
   //lista2s<int> wartosci;
-  lista wartosci;
+  lista<int> *wartosci;
 public:
+  TabAsoc(){haslo=new lista<std::string>; wartosci= new lista<int>;}
   int search(std::string);
   void insert(std::string, int);
 };

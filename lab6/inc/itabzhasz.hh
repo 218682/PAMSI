@@ -5,11 +5,8 @@
 class ITabZHasz
 {
 public:
-  //!metoda ktora przypisuje kluczowi odpowiedni indeks po ktorym nastepuje pozniejsze przeszukiwanie 
-  virtual TabAsoc kluczowanie (std::string)=0;
-  //!przeciazenie operatora
-  virtual TabAsoc operator[] (std::string)=0;
-
+  //!przeciazenie operatora przypisuje ciagowi znakow liczbe
+  virtual TabAsoc &operator[] (const std::string)=0;
 };
 
 #endif

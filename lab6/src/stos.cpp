@@ -18,7 +18,7 @@ int stos::get()
   if(isEmpty()==true)
     throw empty();
   else
-    return wyswietl(ind()); 
+    return tablica<int>::get(ind()); 
 }
 /*
 stos::stos(){*NEXT=NULL; ile_elem=0;}

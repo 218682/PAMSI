@@ -35,7 +35,8 @@ bool stoper::dumpToFile (std::string Nazwa)
       {
 	getTime();
 	plik<<ElapsedTime.count()<<std::endl;
+	plik.close();
 	return true;
-      } else std::cout << "Dostep do pliku zostal zabroniony!" << std::endl;
+      } else std::cerr << "Dostep do pliku zostal zabroniony!" << std::endl;
   return false;
 }
