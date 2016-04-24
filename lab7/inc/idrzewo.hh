@@ -1,9 +1,10 @@
-#idndef iDRZEWO_HH
+#ifndef iDRZEWO_HH
 #define iDRZEWO_HH
-template <class typ>
+#include "strdrzewa.hh"
+//template <class typ>
 class iDrzewo{
 public:
-  virtual void add(typ)=0;
-  virtual typ get(int)=0;
-}
+  virtual void add(int)=0;
+  virtual wezeldrzewa *get(int)=0;
+};
 #endif
