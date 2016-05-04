@@ -18,6 +18,7 @@ public:
   void add(typ, int);
   void add(typ);
   typ get (int);
+  typ* getp (int);
   bool isEmpty();
   int size();
 
@@ -68,12 +69,19 @@ void lista<typ>::remove()
 template <class typ>
 typ lista<typ>::get(int i)
 {
-  if(Tab->isEmpty()==true)
-    throw empty();
-  else if (i>Tab->ind())
+  if (i>Tab->ind())
     throw bad_index();
   else
     return Tab->get(i); 
+}
+//====================================================================//
+template <class typ>
+typ* lista<typ>::getp(int i)
+{
+  if (i>Tab->ind())
+    throw bad_index();
+  else
+    return Tab->getp(i); 
 }
 //====================================================================//
 template <class typ>

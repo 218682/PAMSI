@@ -19,6 +19,7 @@ public:
   void add(typ , int);
   void add(typ);
   typ get (int);
+  //typ* getp (int);
   bool isEmpty();
   int size();
   int find(typ);
@@ -63,9 +64,7 @@ void lista2s<typ>::add(typ x, int i)
 template <class typ>
 void lista2s<typ>::remove(int i)
 {
-  if(rozmiar==0)
-    throw empty();
-  else if(i>rozmiar)
+  if(i>rozmiar)
     throw bad_index();
   else
     {
@@ -128,6 +127,21 @@ typ lista2s<typ>::get(int i)
       return tmp->dana;
     }
 }
+//-------------------------------------------------//
+/*
+template <class typ>
+typ* lista2s<typ>::getp(int i)
+{
+  if (i>rozmiar || i<0)
+    throw bad_index();
+  else
+    {
+      StrListyT <typ> *tmp = FIRST;
+      for(int j=0; j!=i; j++)
+	tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
+      return &(tmp->dana);
+    }
+    }*/
 //-------------------------------------------------//
 template <class typ>
 bool lista2s<typ>::isEmpty()

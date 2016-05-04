@@ -6,7 +6,7 @@
 #include <string>
 #include "lista2s.hh"
 #include "lista.hh"
-#include "drzewotest.hh"
+#include "graf.hh"
 int main (void)
 {
   int i=0;
@@ -24,12 +24,12 @@ int main (void)
       
       while(rozmiary.isEmpty()==false)
 	{
-	  DrzewoTest *D;
-	  D=new DrzewoTest;
-	  std::cout<<rozmiary.get(i)<<std::endl;
-	  D->run(rozmiary.get(i));
+	  // DrzewoTest *D;
+	  //D=new DrzewoTest;
+	  //std::cout<<rozmiary.get(i)<<std::endl;
+	  //D->run(rozmiary.get(i));
 	  rozmiary.remove();
-	  delete D;
+	  //delete D;
 	}
 	std::cout<<std::endl;
       }

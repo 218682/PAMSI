@@ -2,21 +2,17 @@
 #ifndef GRAF_HH
 #define GRAF_HH
 #include "ingraf.hh"
-
-class Graf: public inGraf{
+#include "lista2s.hh"
+//#include "ngraf.hh"
+class graf::Graf: public inGraf{
 private:
-  lista2s<edge> *E;
-  lista2s<vertex> *V;
+  lista <edge> *E;
+  lista <vertex> *V;
 public:
   Graf();
   void addVertex(int);
-  void addEdge(int, int);
+  void addEdge(int, int, int);
   void removeVertex(int);
   void removeEdge(int,int);
 };
-Graf::Graf()
-{
-  E = new lista<edge>;
-  V = new lista<vertex>;
-}
 #endif

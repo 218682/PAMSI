@@ -30,7 +30,8 @@ public:
   
   //void podaj_roz(int M){ this->rozmiar=M;}
   typ get(int n) {return tab[n];}
-  
+  //! zwraca wskaznik do przechowywanego typu
+  typ* getp (int n) {return &tab[n];}
   void push(typ);
   void przypisz(typ, int); 
   void zdejmij(int);
