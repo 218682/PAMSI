@@ -13,6 +13,7 @@ protected:
 public:
   //! konstruktor bezparametryczny
   lista(){Tab=new tablica<typ>;};
+  lista(int n){Tab=new tablica<typ>(n);};
   void remove(int);
   void remove();
   void add(typ, int);

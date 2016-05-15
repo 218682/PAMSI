@@ -13,6 +13,7 @@ protected:
 public:
   //! konstruktor bezparametryczny
   lista(){Tab=new tablica<typ>;};
+  lista(int n){Tab=new tablica<typ>(n);};
   void remove(int);
   void remove();
   void add(typ, int);
@@ -40,7 +41,7 @@ void lista<typ>::add(typ x)
 template <class typ>
 void lista<typ>::add(typ x, int index)
 {
-  if(index<Tab->ind())
+  if(index<=Tab->ind())
     Tab->przypisz (x, index);
   else
     throw bad_index();

@@ -19,7 +19,7 @@ public:
   void add(typ , int);
   void add(typ);
   typ get (int);
-  //typ* getp (int);
+  typ* getp (int);
   bool isEmpty();
   int size();
   int find(typ);
@@ -71,6 +71,7 @@ void lista2s<typ>::remove(int i)
       StrListyT <typ> *tmp = FIRST;
       if(i==0)
 	{
+	  delete FIRST;
 	  FIRST=tmp->NEXT;
 	  //delete tmp;
 	}
@@ -80,12 +81,12 @@ void lista2s<typ>::remove(int i)
 	    tmp = tmp->NEXT;          //przeskakiwanie do odpowiedniego elementu
 	  if (tmp->NEXT->NEXT==NULL)
 	    {
-	      //delete tmp->NEXT;
+	      delete tmp->NEXT->NEXT;
 	      tmp->NEXT=NULL;
 	    }
 	  else
 	    {
-	      // delete tmp->NEXT; //zwalnianie pamieci
+	      delete tmp->NEXT; //zwalnianie pamieci
 	      tmp->NEXT=tmp->NEXT->NEXT;
 	    }
 	}
@@ -102,6 +103,7 @@ void lista2s<typ>::remove()
   else
     {
       StrListyT <typ> *tmp = FIRST;
+      delete FIRST;
       FIRST=tmp->NEXT;
       //delete tmp;         //zwalnianie pamieci
       /*for(int j=0; tmp && j+1!=rozmiar; j++)
@@ -128,7 +130,7 @@ typ lista2s<typ>::get(int i)
     }
 }
 //-------------------------------------------------//
-/*
+
 template <class typ>
 typ* lista2s<typ>::getp(int i)
 {
@@ -141,7 +143,7 @@ typ* lista2s<typ>::getp(int i)
 	tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
       return &(tmp->dana);
     }
-    }*/
+}
 //-------------------------------------------------//
 template <class typ>
 bool lista2s<typ>::isEmpty()
