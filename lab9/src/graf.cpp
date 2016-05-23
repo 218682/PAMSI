@@ -1,5 +1,4 @@
-#include "graf.hh"
-
+#include "ngraf.hh"
 graf::Graf::Graf()
 {
   E = new lista<edge>;
@@ -9,14 +8,16 @@ void graf::Graf::addVertex(int i)
 {
   vertex Ve;
   Ve.lp=i;
-  V->add(Ve, i);
+  V->add(Ve);
 }
 void graf::Graf::addEdge(int X, int Y, int w)
 {
+  //tworzy nowa krawedz
   edge Ed;
   Ed.A=V->getp(X);
   Ed.B=V->getp(Y);
   Ed.waga=w;
+  //std::cout<<"dodaje krawedz do listy"<<std::endl;
   E->add(Ed);
   
   /*wersja z dodanym przeciazeniem operatora ()
@@ -24,6 +25,7 @@ void graf::Graf::addEdge(int X, int Y, int w)
   V(Y)->edges->add(E); */
   
   //na wskaznikach
+  //std::cout<<"dodaje krawedz do wieszcholkow"<<std::endl;
   V->getp(X)->edges->add(Ed); //dodaje krawedz do wieszcholkow X i Y
   V->getp(Y)->edges->add(Ed);
 }
@@ -77,17 +79,20 @@ void graf::Graf::removeEdge(int X,int Y)
   vertex *pom2;
   edge *tmp;
   int i, j, k=0;
-  int ilosc= E->size();
+  int ilosc1;
+  int ilosc2;
   i=0;
   do {pom1=V->getp(i); i++;}
   while(V->getp(i-1)->lp!=X);
+  ilosc1=pom1->edges->size();
   
   i=0;
   do{pom2=V->getp(i);i++;}
   while(V->getp(i-1)->lp!=Y);
-	
-  for(i=0;i<=ilosc; i++)
-    for(j=0; j<=ilosc; j++)
+  ilosc2=pom2->edges->size();
+  
+  for(i=0;i<=ilosc1; i++)
+    for(j=0; j<=ilosc2; j++)
       {
 	if(pom1->edges->getp(i)==pom2->edges->getp(j))
 	  {
@@ -111,4 +116,30 @@ int graf::Graf::getSizeVertex()
 int graf::Graf::getSizeEdge()
 {
   return E->size();
+}
+lista<graf::vertex> graf::Graf::getNeighbors(int a)
+{
+  lista<vertex> li;
+  vertex* pom=V->getp(a);
+  for(int i=0; i<pom->edges->size();i++)
+    if(pom->edges->getp(i)->A!=V->getp(a))
+      li.add(*pom->edges->getp(i)->A);
+    else
+      li.add(*pom->edges->getp(i)->B);
+  return li;
+}
+lista<graf::edge> graf::Graf::getIncydentEdges(vertex &w)
+{
+  
+  return *V->get(w.lp).edges;
+}
+graf::vertex graf::Graf::getNextVertex(const vertex &w,const edge e)
+{
+  if(e.A->lp==w.lp)
+    return *e.B;
+  return *e.A;
+}
+graf::vertex graf::Graf::getVertex(int i)
+{
+  return V->get(i);
 }

@@ -1,0 +1,36 @@
+#ifndef BnBs
+#define BnBs
+struct BnBs
+{
+  graf::vertex V;
+  int dlugosc;
+  bool koniec=false;
+  bool operator <(const BnBs & B)
+  {
+    if (this->dlugosc<B.dlugosc)
+      return true;
+    return false;
+  }
+  bool operator >(const BnBs & B)
+  {
+    if (this->dlugosc>B.dlugosc)
+      return true;
+    return false;
+  }
+  bool operator == (const BnBs & B)
+  {
+    if(this->dlugosc==B.dlugosc)
+      return true;
+    return false;
+  }
+};
+struct PorownajBnBs
+{
+  bool operator()(const BnBs & B, const BnBs & C)
+  {
+    if(B.koniec==true) return false;
+    if(B.dlugosc>C.dlugosc) return true;
+    return false;
+  }
+};
+#endif

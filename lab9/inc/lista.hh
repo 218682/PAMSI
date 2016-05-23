@@ -16,6 +16,7 @@ public:
   lista(int n){Tab=new tablica<typ>(n);};
   void remove(int);
   void remove();
+  void removeo(typ);
   void add(typ, int);
   void add(typ);
   typ get (int);
@@ -41,7 +42,7 @@ void lista<typ>::add(typ x)
 template <class typ>
 void lista<typ>::add(typ x, int index)
 {
-  if(index<Tab->ind())
+  if(index<=Tab->ind())
     Tab->przypisz (x, index);
   else
     throw bad_index();
@@ -65,6 +66,18 @@ void lista<typ>::remove()
     throw empty();
   else
     Tab->zdejmij(Tab->ind());
+}
+//====================================================================//
+template <class typ>
+void lista<typ>::removeo(typ o)
+{
+  int i=0;
+  if(Tab->isEmpty()==true)
+    throw empty();
+  else
+    while(Tab->get(i)==o)
+      i++;
+    Tab->zdejmij(i);
 }
 //====================================================================//
 template <class typ>

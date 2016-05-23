@@ -1,0 +1,181 @@
+#include "BnB.hh"
+#include <iostream>
+BranchNBound::BranchNBound(graf::Graf G)
+{
+  galezie=new std::priority_queue<BnBs, std::vector<BnBs>, PorownajBnBs>;
+  path= new lista<graf::vertex>;
+  licznik=0;
+}
+
+lista<graf::vertex>* BranchNBound::BnB(graf::Graf G, graf::vertex A, graf::vertex B)
+{
+  BnBs pom;
+  pom.V=A;
+  pom.dlugosc=0;
+  galezie->push(pom); // zapisz
+  
+  //w.add(pom)
+  licznik++;
+  while(BnB(G, pom, B)==false) //dodaj wieszcholki do listy
+    {
+      //wybierz najkrotszy
+      pom=galezie->top();
+    }
+  //pom=galezie->top();
+  //path->add(pom.V);
+  //while(pom.rodzic==NULL)
+  // {
+  //   std::cout<<"zapisuje scierzke ";
+  //  pom=*pom.rodzic;
+  //  path->add(pom.V);
+  //}
+  return path;
+}
+bool BranchNBound::BnB(graf::Graf G, BnBs Z, graf::vertex B)
+{
+  BnBs pom;
+  lista<graf::edge> inc;
+  if(Z.V.lp==B.lp)
+      return true;
+  inc=G.getIncydentEdges(Z.V);
+  galezie->pop();
+  for(int i=0; i<inc.size();i++)
+    {
+      pom.V=G.getNextVertex(Z.V, inc.get(i));
+      pom.dlugosc=((inc.get(i).waga)+(Z.dlugosc));
+      if(inc.size()==1)
+	pom.koniec=true;
+      if(pom.V.lp!=Z.V.lp)
+	{
+	  galezie->push(pom);
+	}
+    }
+  return false;
+  }
+
+/*
+graf::BFS::BFS(Graf G)
+{
+  int miejsce=G.getSizeVertex();
+  kolor = new char[miejsce];
+  //odleglosc = new int[miejsce];
+  rodzic = new int[miejsce];
+  for(int i=0; i< miejsce; i++)
+    {
+      kolor[i]='b'; // kolor bialy
+      // odleglosc[i]=-1; //-1 jako nieskonczonosc
+      rodzic[i]=-1; //bo wszystkie wieszcholki numerowane od 0
+    }
+  Q=new kolejka<int>;
+  p=new kolejka<int>;
+}
+
+BranchNBound::BranchNBound()
+{
+  galezie=new lista<BnBs>;
+  path= new lista<graf::vertex>;
+}
+int BranchNBound::BnB(graf::Graf G, graf::vertex A, graf::vertex B)
+{
+  std::cout<<"BnB"<<std::endl;
+  BnBs pom;
+  int najkrotszy;
+  int licznik=0;
+  index=0;
+  pom.V=A;
+  pom.dlugosc=0;
+  pom.rodzic=NULL;
+  galezie->push(pom); // zapisz
+  //w.add(pom)
+  licznik++;
+  while(BnB(G, pom, B)==false) //dodaj wieszcholki do listy
+    {
+      std::cout<<std::endl;
+      licznik++;
+      //std::cout<<licznik<<std::endl;
+      najkrotszy=galezie->get(0).dlugosc;
+      //wybierz najkrotszy
+      for(int i=0; i<galezie->size(); i++)
+	if(galezie->get(i).dlugosc<najkrotszy && galezie->get(i).koniec==false)
+	  {
+	    std::cout<<"najkrotszy "<<najkrotszy<<std::endl;
+	    najkrotszy=galezie->get(i).dlugosc;
+	    pom=galezie->get(i);
+	    index=i;
+	  }
+    }
+  std::cout<<"wyszedlem z petli"<<std::endl;
+  pom=galezie->get(galezie->size()-1);
+  std::cout<<"przypisano pom"<<std::endl;
+  path->add(pom.V);
+  while(pom.rodzic==NULL)
+    {
+      pom=*pom.rodzic;
+      path->add(pom.V);
+    }
+  return licznik;
+}
+bool BranchNBound::BnB(graf::Graf G, BnBs Z, graf::vertex B)
+{
+  BnBs pom;
+  lista<graf::edge> inc;
+  // std::cout<<Z.V.lp<<" "<<B.lp<<std::endl;
+  if(Z.V.lp==B.lp)
+      return true;
+  inc=G.getIncydentEdges(Z.V);
+  galezie->remove(index);
+  for(int i=0; i<inc.size();i++)
+    {
+      pom.V=G.getNextVertex(Z.V, inc.get(i));
+      pom.dlugosc=((inc.get(i).waga)+(Z.dlugosc));
+      pom.rodzic=&Z;
+      if(inc.size()==1)
+	pom.koniec=true;
+      if(pom.V.lp!=Z.V.lp)
+	{
+	  galezie->add(pom);
+	}
+    }
+  return false;
+}
+lista<graf::vertex>* BranchNBound::BnBwEL(graf::Graf G, graf::vertex A, graf::vertex B)
+{
+  BnBs pom;
+  pom.V=A;
+  pom.dlugosc=0;
+  galezie->push(pom); // zapisz
+  //path->add(pom.V);
+  licznik++;
+  while(BnB(G, pom, B)==false) //dodaj wieszcholki do listy
+    {
+      licznik++;
+      //wybierz najkrotszy
+      pom=galezie->top();
+      
+      // path->add(pom.V);
+    }
+  return path;
+}
+bool BranchNBound::BnBwEL(graf::Graf G, BnBs Z, graf::vertex B)
+{
+  BnBs pom;
+  lista<graf::edge> inc;
+  if(Z.V.lp==B.lp)
+      return true;
+  inc=G.getIncydentEdges(Z.V);
+  galezie->pop();
+  for(int i=0; i<inc.size();i++)
+    {
+      pom.V=G.getNextVertex(Z.V, inc.get(i));
+      pom.dlugosc=((inc.get(i).waga)+(Z.dlugosc));
+      if(inc.size()==1)
+	pom.koniec=true;
+      if(odwiedzony[pom.V.lp]==false)
+	{
+	  galezie->push(pom);
+	  odwiedzony[pom.V.lp]=true;
+	}
+    }
+  return false;
+}
+*/

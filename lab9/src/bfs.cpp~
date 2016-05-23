@@ -9,6 +9,7 @@ kolejka<int>* graf::BFS::path(Graf G, int V, int A)
   kolor[V]='s';//kolorujemy wieszcholek na szaro
   // odleglosc[V]=0;
   Q->enqueue(V);
+  Q->enqueue(1);
   if(V==A)
     return Q;
   while(Q->isEmpty()==false && w.lp!=A)

@@ -1,26 +1,72 @@
 #ifndef BnB_HH
 #define BnB_HH
-void BnB(Graf G, vertex A, vertex B)
+#include "ngraf.hh"
+#include <queue>
+struct BnBs
 {
-  edge shorter;
-  //1. zapisz punkt startowy
-  //2. wybierz najkrotsza krawedz z punktu startowego
-  //3. jezeli nastepny wieszcholek = B, sprawdzaj tylko krotsze
-  //4. gdy wszystkie sprawdzone zwroc najkrotsza scierzke
-  Graf C;
-  C.addVertex(A); // zapisz
-  BnB(G, C, A, B) //dodaj galezie do grafu
-  //wybierz najkrotszy
-  
-}
-void BnB(Graf G, Graf &C, vertex Z, vertex B)
+  graf::vertex V;
+  int dlugosc;
+  bool koniec=false;
+  bool operator <(const BnBs & B)
+  {
+    if (this->dlugosc<B.dlugosc)
+      return true;
+    return false;
+  }
+  bool operator >(const BnBs & B)
+  {
+    if (this->dlugosc>B.dlugosc)
+      return true;
+    return false;
+  }
+  bool operator == (const BnBs & B)
+  {
+    if(this->dlugosc==B.dlugosc && this->V.lp==B.V.lp)
+      return true;
+    return false;
+  }
+};
+struct PorownajBnBs
 {
-  lista<edge> inc;
-  inc=G.getIncydentEdges(Z);
-  for(int i=0, i<inc.size();i++)
-    {
-      C.addEdge(inc.get(i).waga);
-      C.addVertex(getNextVertex(Z, inc.get(i)));
-    }
-}
+  bool operator()(const BnBs & B, const BnBs & C)
+  {
+    if(B.koniec==true) return false;
+    if(B.dlugosc>C.dlugosc) return true;
+    return false;
+  }
+};
+/*class BranchNBound{
+private:
+  std::priority_queue <BnBs, std::vector<BnBs>, PorownajBnBs> *galezie;
+  lista<graf::vertex> *path;
+  bool BnB(graf::Graf, BnBs, graf::vertex);
+public:
+  lista<graf::vertex>* BnB(graf::Graf, graf::vertex, graf::vertex);
+  BranchNBound(graf::Graf);
+  int licznik;
+  };*/
+class BranchNBoundExL{
+  private:
+  bool *odwiedzone;
+  int *odleglosc;
+  int *rodzic;
+  std::priority_queue <BnBs, std::vector<BnBs>, PorownajBnBs> *Q;
+  kolejka<int> *p;
+  bool BnBwEL(graf::Graf, BnBs, graf::vertex);
+public:
+  kolejka<int>* BnBwEL(graf::Graf, graf::vertex, graf::vertex);
+  BranchNBoundExL(graf::Graf);
+  int licznik;
+};
+class BranchNBound{
+  private:
+  int *rodzic;
+  std::priority_queue <BnBs, std::vector<BnBs>, PorownajBnBs> *Q;
+  kolejka<int> *p;
+  bool BnB(graf::Graf, BnBs, graf::vertex);
+public:
+  kolejka<int>* BnB(graf::Graf, graf::vertex, graf::vertex);
+  BranchNBound(graf::Graf);
+  int licznik;
+};
 #endif

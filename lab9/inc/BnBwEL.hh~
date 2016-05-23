@@ -1,0 +1,19 @@
+#ifndef BnBEL_HH
+#define BnBEL_HH
+#include "ngraf.hh"
+#include <queue>
+#include "BnBs.hh"
+class BranchNBoundExL{
+  private:
+  bool *odwiedzone;
+  int *odleglosc;
+  int *rodzic;
+  std::priority_queue <BnBs, std::vector<BnBs>, PorownajBnBs> *Q;
+  kolejka<int> *p;
+public:
+  lista<graf::vertex>* BnBwEL(graf::Graf, graf::vertex, graf::vertex);
+  BranchNBoundExL(graf::Graf);
+  int licznik;
+
+};
+#endif

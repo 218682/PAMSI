@@ -6,7 +6,6 @@
 #define KOLEJKA_HH
 #include "inkolejka.hh"
 #include "strukturalistyT.hh"
-#include <iostream>
 template <class typ> class kolejka: public inKolejka<typ>
 {
 protected:
@@ -33,8 +32,7 @@ void kolejka<typ>::enqueue(typ x)
 {
   StrListyT <typ> *NEW  = new StrListyT<typ>;
   NEW->dana=x;
-  NEW->NEXT = NULL;
-  if(rozmiar==0)
+  if(LAST==NULL)
     {
       FIRST=NEW;
       LAST=NEW;
@@ -43,21 +41,23 @@ void kolejka<typ>::enqueue(typ x)
     {
       StrListyT<typ> *tmp = LAST;
       tmp->NEXT = NEW;
+      NEW->NEXT = NULL;
       LAST=NEW;
     }
   this->rozmiar++;
-}
+  }
 //-------------------------------------------------//
 template <class typ>
 void kolejka<typ>::dequeue()
 {
+  
   if(rozmiar==0)
     throw empty();
   else
     {
       StrListyT <typ> *tmp = FIRST;
-      delete FIRST;  //zwalnianie pamieci
-      FIRST=tmp->NEXT;       
+      FIRST=tmp->NEXT;
+      //delete tmp;         //zwalnianie pamieci
       /*for(int j=0; tmp && j+1!=rozmiar; j++)
       tmp = tmp->NEXT;              //przeskakiwanie do odpowiedniego elementu
       delete tmp->NEXT;             //zwalnianie pamieci
